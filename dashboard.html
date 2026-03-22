@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Wallet | Tableau de bord</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<a href="../index.html" class="logo">
+<img src="src/e-Wallet6.gif" alt="Logo E-Wallet">
+</a>
+<ul class="nav-links"></ul>
+</nav>
+</header>
+
+<main class="dashboard-main">
+<div class="dashboard-container">
+
+
+<aside class="dashboard-sidebar">
+<nav class="sidebar-nav">
+<ul>
+
+<li class="active">
+<a href="#overview">
+<i class="fas fa-home"></i>
+<span>Vue d'ensemble</span>
+</a>
+</li>
+
+<li>
+<a href="#transactions">
+<i class="fas fa-exchange-alt"></i>
+<span>Transactions</span>
+</a>
+</li>
+
+<li>
+<a href="#cards">
+<i class="fas fa-credit-card"></i>
+<span>Mes cartes</span>
+</a>
+</li>
+
+<li>
+<a href="#" id="quickTransfer">
+<i class="fas fa-paper-plane"></i>
+<span>Transferts</span>
+</a>
+</li>
+
+</ul>
+</nav>
+</aside>
+
+<!-- CONTENT -->
+<div class="dashboard-content">
+
+<section id="overview" class="dashboard-section active">
+
+<div class="section-header">
+<h2>Bonjour, <span id="greetingName">?</span> !</h2>
+<p id="currentDate"></p>
+</div>
+
+
+<div class="summary-cards">
+
+<div class="summary-card">
+<div class="card-icon blue"><i class="fas fa-wallet"></i></div>
+<div class="card-details">
+<span>Solde disponible</span>
+<span id="availableBalance">?</span>
+</div>
+</div>
+
+<div class="summary-card">
+<div class="card-icon green"><i class="fas fa-arrow-up"></i></div>
+<div class="card-details">
+<span>Revenus</span>
+<span id="monthlyIncome">?</span>
+</div>
+</div>
+
+<div class="summary-card">
+<div class="card-icon red"><i class="fas fa-arrow-down"></i></div>
+<div class="card-details">
+<span>Dépenses</span>
+<span id="monthlyExpenses">?</span>
+</div>
+</div>
+
+<div class="summary-card">
+<div class="card-icon purple"><i class="fas fa-credit-card"></i></div>
+<div class="card-details">
+<span>Cartes actives</span>
+<span id="activeCards">?</span>
+</div>
+</div>
+
+</div>
+
+
+<h3>Transactions récentes</h3>
+<div id="recentTransactionsList"></div>
+
+</section>
+
+</div>
+</div>
+</main>
+
+
+<div id="transferPopup" class="popup-overlay">
+
+<div class="popup-content">
+
+<div class="popup-header">
+<h2>Transfert</h2>
+<button id="closeTransferBtn">X</button>
+</div>
+
+<div class="popup-body">
+
+  <form id="transferForm" class="transfer-form">
+
+    <div class="form-group">
+      <label>Bénéficiaire</label>
+      <select id="beneficiary">
+        <option value="">Choisir</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Carte</label>
+      <select id="sourceCard">
+        <option value="">Choisir</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Montant</label>
+      <input type="number" id="amount" placeholder="0">
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="cancelTransferBtn" class="btn btn-secondary">
+        Annuler
+      </button>
+
+      <button type="submit" id="submitTransferBtn" class="btn btn-primary">
+        Transférer
+      </button>
+    </div>
+
+  </form>
+
+</div>
+</div>
+</div>
+
+<footer>
+<p>&copy; 2026 E-Wallet</p>
+</footer>
+
+<script type="module" src="../controllers/dashboard.js"></script>
+
+</body>
+</html>
