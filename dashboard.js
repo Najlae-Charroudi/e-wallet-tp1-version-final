@@ -1,4 +1,4 @@
-import { getbeneficiaries, finduserbyaccount, findbeneficiarieByid } from "../controllers/database.js";
+import { getbeneficiaries, finduserbyaccount, findbeneficiarieByid } from "database.js";
 
 const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
